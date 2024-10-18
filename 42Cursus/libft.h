@@ -6,15 +6,15 @@
 /*   By: lmancho <lmancho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:44:52 by lmancho           #+#    #+#             */
-/*   Updated: 2024/10/18 14:04:59 by lmancho          ###   ########.fr       */
+/*   Updated: 2024/10/18 17:38:14 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stddef.h>
-# include <stdlib.h>
 # include <unistd.h>
+# include <stdlib.h>
 
 //Part 1
 int		ft_atoi(const char *str);
@@ -43,4 +43,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 #endif
