@@ -6,7 +6,7 @@
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 15:24:17 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/19 12:55:14 by placombe         ###   ########.fr       */
+/*   Updated: 2024/10/19 14:51:45 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	d = (unsigned char *)dest;
 	s = (const unsigned char *)src;
+	if (!dest && !src)
+		return (dest);
 	while (n--)
 		*d++ = *s++;
 	return (dest);

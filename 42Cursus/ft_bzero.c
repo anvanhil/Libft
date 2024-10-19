@@ -6,7 +6,7 @@
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 15:17:50 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/19 12:53:28 by placombe         ###   ########.fr       */
+/*   Updated: 2024/10/19 13:58:17 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,7 @@ void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*ptr;
 
-	if (!s)
-		return ;
 	ptr = (unsigned char *)s;
 	while (n--)
-	{
 		*ptr++ = 0;
-	}
 }

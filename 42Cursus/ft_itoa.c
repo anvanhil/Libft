@@ -6,18 +6,18 @@
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 11:55:49 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/19 12:54:41 by placombe         ###   ########.fr       */
+/*   Updated: 2024/10/19 13:07:47 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+/*char	*ft_itoa(int n)
 {
 	int		i;
 	char	str;
 	int		len;
 
 	i = 0;
-	if(n == 0)
-} 
+	if (n == 0)
+}*/

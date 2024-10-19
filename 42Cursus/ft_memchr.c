@@ -6,7 +6,7 @@
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 15:23:06 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/19 12:54:51 by placombe         ###   ########.fr       */
+/*   Updated: 2024/10/19 17:46:37 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,18 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*str;
+	size_t			i;
 	unsigned char	chr;
-	int				i;
 
-	i = 0;
-	chr = (char) c;
 	str = (unsigned char *) s;
-	while (str[i] != '\0' && n--)
+	chr = (unsigned char) c;
+	i = 0;
+	while (i < n)
 	{
 		if (str[i] == chr)
-			return ((unsigned char *)&str[i]);
+			return ((void *) &str[i]);
 		i++;
 	}
-	if (str[i] == chr)
-		return ((unsigned char *)&str[i]);
 	return (NULL);
 }
 /*
@@ -36,7 +34,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 int	main()
 {
 	char test[] = "salut";
-	const char *p = ft_memchr(test, 'u', 2);
+	const char *p = ft_memchr(test, 'l', 2);
 	printf("%s", p);
 	return (0);
 }*/

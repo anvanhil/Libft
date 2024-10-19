@@ -6,7 +6,7 @@
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 15:25:40 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/19 12:55:49 by placombe         ###   ########.fr       */
+/*   Updated: 2024/10/19 16:26:10 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,14 @@ void	ft_putendl_fd(char *s, int fd)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		write(fd, &s, 1);
+		write(fd, &s[i], 1);
 		i++;
 	}
 	write (fd, "\n", 1);
 }
+/*int	main()
+{
+	char t[] = "lorem\nipsum\rdolor\tsit amet";
+	ft_putendl_fd(t,1);
+	return (0);
+}*/

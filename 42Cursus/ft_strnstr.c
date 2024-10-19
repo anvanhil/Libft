@@ -6,7 +6,7 @@
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 15:28:41 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/19 12:57:32 by placombe         ###   ########.fr       */
+/*   Updated: 2024/10/19 17:55:30 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,17 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	j = 0;
 	if (ft_strlen(little) == 0)
 		return ((char *)big);
-	while (big[i] != '\0' && i < len)
+	if (!little)
+		return (NULL);
+	while (big[i] && i < len)
 	{
-		j = 0;
-		while (big[i + j] == little[j])
+		while (big[i + j] == little[j] && big[i + j] && i + j < len)
 		{
 			j++;
 			if (little[j] == '\0')
 				return ((char *) big + i);
 		}
+		j = 0;
 		i++;
 	}
 	return (NULL);
@@ -39,9 +41,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 #include <bsd/string.h>
 int	main()
 {
-	char s1[] = "Hey, ca va";
-	char s2[] = "ca";
-	printf("%s\n", ft_strnstr(s1, s2, 10));
-	printf("%s\n", strnstr(s1, s2, 10));
+	//char s1[] = "";
+	char s2[] = "fake";
+	printf("%s\n", ft_strnstr(((void *)0), s2, 3));
+	//printf("%s\n", strnstr(((void *)0), s2, 15));
 	return (0);
 }*/
