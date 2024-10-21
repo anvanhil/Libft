@@ -6,7 +6,7 @@
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 15:18:37 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/20 16:15:16 by placombe         ###   ########.fr       */
+/*   Updated: 2024/10/21 11:34:33 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
+/*#include<stdio.h>
+int main()
+{
+	char test[] = "salut";
+	unsigned int nb = 15;
+	ft_strmapi(test, ft_toupper(15));
+	printf("%s", test);
+	return 0;
+}*/

@@ -6,7 +6,7 @@
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 15:25:00 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/19 12:55:31 by placombe         ###   ########.fr       */
+/*   Updated: 2024/10/21 11:47:19 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,11 @@ void	*ft_memset(void *s, int c, size_t len)
 	}
 	return (s);
 }
+/*#include<stdio.h>
+int main()
+{
+	char s[] = "Hello bozo";
+	ft_memset(s + 6, '.',4);
+	printf("%s", s);
+	return (0);
+}*/

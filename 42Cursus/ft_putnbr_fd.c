@@ -6,7 +6,7 @@
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 15:25:56 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/19 13:17:58 by placombe         ###   ########.fr       */
+/*   Updated: 2024/10/21 11:48:04 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,8 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n / 10, fd);
 	ft_putchar_fd(n % 10 + '0', fd);
 }
+/*int main()
+{
+	ft_putnbr_fd(-2147483648,1);
+	return 0;
+}*/

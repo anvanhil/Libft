@@ -6,7 +6,7 @@
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 15:19:03 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/19 12:53:18 by placombe         ###   ########.fr       */
+/*   Updated: 2024/10/21 11:39:05 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,10 @@ int	ft_atoi(const char *str)
 	}
 	return (resultat * signe);
 }
+/*#include<stdio.h>
+int main()
+{
+	char *s = "-2147483648";
+	printf("%i",ft_atoi(s));
+	return 0;
+}*/

@@ -6,7 +6,7 @@
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 11:55:49 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/20 15:15:49 by placombe         ###   ########.fr       */
+/*   Updated: 2024/10/21 14:43:09 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	*ft_itoa(int n)
 /*#include<stdio.h>
 int main()
 {
-	int test = 124;
+	int test = -2147483648;
 	printf("%s", ft_itoa(test));
 	return 0;
 }*/

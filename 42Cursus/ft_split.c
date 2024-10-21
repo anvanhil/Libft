@@ -6,7 +6,7 @@
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 11:04:47 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/20 14:01:15 by placombe         ###   ########.fr       */
+/*   Updated: 2024/10/21 11:51:24 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int main(void) {
     char **result;
     int i;
  
-    char *str = "Bonjour  tout le  monde!";    
+    char *str = "Pour  qui sont  ces serpents!";    
     result = ft_split(str, ' ');
     if (!result) {
         printf("Erreur d'allocation de mémoire.\n");

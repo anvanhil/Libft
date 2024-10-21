@@ -6,7 +6,7 @@
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 16:17:03 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/20 16:28:34 by placombe         ###   ########.fr       */
+/*   Updated: 2024/10/21 11:04:34 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	}
 	s[i] = '\0';
 }
+/*#include<stdio.h>
+int main()
+{
+	char test[] = "salut";
+	ft_striteri(test,(ft_toupper)(test));
+	printf("%s", test);
+	return (0);
+}*/
