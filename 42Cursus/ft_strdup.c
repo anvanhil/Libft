@@ -6,7 +6,7 @@
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 15:26:57 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/19 12:56:39 by placombe         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:07:08 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strdup(const char *s)
 #include <string.h>
 int	main()
 {
-	char test[] = "Hello Bozo";
+	char test[] = 65;
 	char *testdup = ft_strdup(test);
 	printf("%s\n", testdup);
 	char *teststrdup = strdup(test);

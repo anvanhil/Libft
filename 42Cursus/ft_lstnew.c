@@ -1,46 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/18 15:19:03 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/23 12:54:32 by placombe         ###   ########.fr       */
+/*   Created: 2024/10/22 10:20:54 by placombe          #+#    #+#             */
+/*   Updated: 2024/10/22 11:14:40 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+t_list	*ft_lstnew(void *content)
 {
-	int	i;
-	int	signe;
-	int	resultat;
+	t_list	*element;
 
-	i = 0;
-	resultat = 0;
-	signe = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			signe = -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		resultat = resultat * 10 + (str[i] - '0');
-		i++;
-	}
-	return (resultat * signe);
+	element = malloc(sizeof(t_list));
+	if (!element)
+		return (NULL);
+	element->content = content;
+	element->next = NULL;
+	return (element);
 }
 /*#include<stdio.h>
 int main()
 {
-	char *s = "-21474836499999999999999999999999999";
-	printf("%i\n",ft_atoi(s));
-	printf("%i",atoi(s));
+	char *s= "Oh Rage ! Oh Desespoir";
+	t_list *element = ft_lstnew(s);
+	printf("%s", (char *)element->content);
+	free(element);
 	return 0;
 }*/

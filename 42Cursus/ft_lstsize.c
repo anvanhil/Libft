@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/20 15:18:37 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/22 10:14:56 by placombe         ###   ########.fr       */
+/*   Created: 2024/10/22 11:54:13 by placombe          #+#    #+#             */
+/*   Updated: 2024/10/22 12:07:36 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	ft_lstsize(t_list *lst)
 {
-	size_t		i;
-	char		*str;
+	int	i;
 
 	i = 0;
-	str = (char *)malloc(sizeof(char ) * (ft_strlen(s) + 1));
-	if (!str)
-		return (NULL);
-	while (i < ft_strlen(s))
+	while (lst)
 	{
-		str[i] = (*f)(i, s[i]);
 		i++;
+		lst = lst->next;
 	}
-	str[i] = '\0';
-	return (str);
+	return (i);
 }
-/*#include<stdio.h>
-int main()
+/*#include <stdio.h>
+int	main()
 {
-	char test[] = "salut";
-	unsigned int nb = 15;
-	ft_strmapi(test, ft_toupper(15));
-	printf("%s", test);
+	t_list *s = NULL;
+
+	t_list *element = ft_lstnew("bozo");
+	t_list *element2 = ft_lstnew("FF15");
+
+	ft_lstadd_front(&s,element);
+	ft_lstadd_front(&s,element2);
+	printf("%i",ft_lstsize(s));
 	return 0;
 }*/

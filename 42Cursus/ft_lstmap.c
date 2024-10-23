@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/20 15:18:37 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/22 10:14:56 by placombe         ###   ########.fr       */
+/*   Created: 2024/10/23 11:09:58 by placombe          #+#    #+#             */
+/*   Updated: 2024/10/23 13:10:56 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t		i;
-	char		*str;
+	t_list	*str;
+	t_list	*new_elem;
 
-	i = 0;
-	str = (char *)malloc(sizeof(char ) * (ft_strlen(s) + 1));
-	if (!str)
+	if (!lst || !f || !del)
 		return (NULL);
-	while (i < ft_strlen(s))
+	str = NULL;
+	while (lst)
 	{
-		str[i] = (*f)(i, s[i]);
-		i++;
+		new_elem = ft_lstnew((*f)(lst->content));
+		if (!new_elem)
+		{
+			ft_lstclear(&str, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&str, new_elem);
+		lst = lst->next;
 	}
-	str[i] = '\0';
 	return (str);
 }
-/*#include<stdio.h>
-int main()
-{
-	char test[] = "salut";
-	unsigned int nb = 15;
-	ft_strmapi(test, ft_toupper(15));
-	printf("%s", test);
-	return 0;
-}*/

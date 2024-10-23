@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: placombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/20 15:18:37 by placombe          #+#    #+#             */
-/*   Updated: 2024/10/22 10:14:56 by placombe         ###   ########.fr       */
+/*   Created: 2024/10/22 13:52:19 by placombe          #+#    #+#             */
+/*   Updated: 2024/10/23 11:08:25 by placombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t		i;
-	char		*str;
+	t_list	*tmp;
 
-	i = 0;
-	str = (char *)malloc(sizeof(char ) * (ft_strlen(s) + 1));
-	if (!str)
-		return (NULL);
-	while (i < ft_strlen(s))
+	while (*lst)
 	{
-		str[i] = (*f)(i, s[i]);
-		i++;
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
 	}
-	str[i] = '\0';
-	return (str);
+	*lst = NULL;
+	free(*lst);
 }
-/*#include<stdio.h>
-int main()
-{
-	char test[] = "salut";
-	unsigned int nb = 15;
-	ft_strmapi(test, ft_toupper(15));
-	printf("%s", test);
-	return 0;
-}*/

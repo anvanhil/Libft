@@ -6,7 +6,7 @@
 #    By: placombe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/19 12:27:45 by placombe          #+#    #+#              #
-#    Updated: 2024/10/20 16:22:45 by placombe         ###   ########.fr        #
+#    Updated: 2024/10/23 11:24:39 by placombe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,11 @@ SRCS		=	ft_atoi.c  ft_bzero.c  ft_calloc.c  ft_isalnum.c  ft_isalpha.c  ft_isasc
 				ft_strnstr.c  ft_strrchr.c  ft_tolower.c  ft_toupper.c ft_substr.c ft_strjoin.c ft_putchar_fd.c\
 				ft_putendl_fd.c ft_putnbr_fd.c ft_strtrim.c ft_putstr_fd.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c\
 
+SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstadd_back.c ft_lstdelone.c ft_lstlast.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
+
 OBJS		=	$(SRCS:.c=.o)
+
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 CC			= gcc
 
@@ -29,13 +33,14 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 			ar rsc $(NAME) $(OBJS)
-
+bonus:		$(OBJS_BONUS)
+			ar rsc $(NAME) $(OBJS_BONUS)
 clean:
-			rm -f $(OBJS)
+			rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean:		clean
 			rm -f $(NAME)
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re bonus
